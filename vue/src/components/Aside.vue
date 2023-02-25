@@ -17,6 +17,58 @@
       </svg>
       <span>展示板</span>
     </el-menu-item>
+    <el-sub-menu index="20" text-color="#fff">
+      <template #title>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-mingpian "></use>
+        </svg>
+        <span>数据可视化</span>
+      </template>
+      <el-menu-item index="/DailyActionForAdmin" style="font-color: white" v-if="user.role == 1">
+        <el-icon><Platform /></el-icon>
+        <span>日常行为信息可视化</span>
+      </el-menu-item>
+      <el-menu-item index="/DailyActionForStudent" style="font-color: white">
+        <el-icon><Notebook /></el-icon>
+        <span>日常行为信息填写</span>
+      </el-menu-item>
+      <el-menu-item index="/HabitForAdmin">
+        <el-icon><Platform /></el-icon>
+      <span>爱好信息可视化</span>
+    </el-menu-item>
+      <el-menu-item index="/HabitForStudent">
+        <el-icon><Notebook /></el-icon>
+        <span>爱好信息填写</span>
+      </el-menu-item>
+      <el-menu-item index="/ActivityForAdmin">
+        <el-icon><Platform /></el-icon>
+        <span>课外活动信息可视化</span>
+      </el-menu-item>
+      <el-menu-item index="/ActivityForStudent">
+        <el-icon><Notebook /></el-icon>
+        <span>课外活动信息填写</span>
+      </el-menu-item>
+    </el-sub-menu>
+    <el-sub-menu index="21" text-color="#fff">
+      <template #title>
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-mingpian "></use>
+        </svg>
+        <span>决策推荐</span>
+      </template>
+      <el-menu-item index="/person" style="font-color: white">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-a-bianji1 "></use>
+        </svg>
+        <span>采购推荐</span>
+      </el-menu-item>
+      <el-menu-item index="/password">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-mima "></use>
+        </svg>
+        <span>活动推荐</span>
+      </el-menu-item>
+    </el-sub-menu>
     <el-sub-menu index="2" text-color="#fff">
       <template #title>
         <svg class="icon" aria-hidden="true">
@@ -86,6 +138,7 @@ export default {
   created(){
     let userStr = sessionStorage.getItem("user") ||"{}"
     this.user = JSON.parse(userStr)
+    console.log(this.user);
   },
   data(){
     return {
